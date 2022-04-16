@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect,HttpResponse
+from .forms import SignUpForm
 
 # Create your views here.
 
@@ -10,4 +11,4 @@ def login(request):
 
 def signup(request):
     form = SignUpForm(request.POST)
-    return render(request,'signup.html')        
+    return render(request,'signup.html',{'form':form})      
