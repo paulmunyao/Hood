@@ -9,4 +9,5 @@ def login(request):
     return render(request,'login.html')
 
 def signup(request):
+    form = SignUpForm(request.POST)
     return render(request,'signup.html')        
