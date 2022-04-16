@@ -6,9 +6,8 @@ from .forms import SignUpForm
 def index(request):
     return render(request,'index.html')
 
-def login(request):
-    return render(request,'login.html')
+
 
 def signup(request):
     form = SignUpForm(request.POST)
-    return render(request,'signup.html',{'form':form})      
+    return render(request,'registration/signup.html',{'form':form})      
