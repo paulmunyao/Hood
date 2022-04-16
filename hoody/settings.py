@@ -77,7 +77,11 @@ WSGI_APPLICATION = 'hoody.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'hood',
+        'USER': 'moringa',
+        'PASSWORD': 'Access',
+        'HOST': 'localhost',
+        'PORT': '127.0.0.1',
     }
 }
 
