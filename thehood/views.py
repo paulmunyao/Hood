@@ -21,6 +21,6 @@ def signup(request):
         form = SignUpForm()
     return render(request, 'registration/signup.html', {'form': form})
 
-@login_required
+@login_required(login_url='/registration/login')
 def display(request):
     return render(request, 'display.html')
