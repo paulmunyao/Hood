@@ -24,3 +24,6 @@ def signup(request):
 @login_required(login_url='/registration/login')
 def display(request):
     return render(request, 'display.html')
+
+def profile(request):
+    return render(request, 'profile.html')    
