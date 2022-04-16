@@ -1,11 +1,11 @@
-from django.shortcuts import render,redirect,HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 from .forms import SignUpForm
 
 # Create your views here.
 
-def index(request):
-    return render(request,'index.html')
 
+def index(request):
+    return render(request, 'index.html')
 
 
 def signup(request):
@@ -14,5 +14,6 @@ def signup(request):
         if form.is_valid():
             form.save()
             return redirect('login')
-    form = SignUpForm(request.POST)
-    return render(request,'registration/signup.html',{'form':form})      
+    else:
+        form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': form})
