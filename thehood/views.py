@@ -9,5 +9,10 @@ def index(request):
 
 
 def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
     form = SignUpForm(request.POST)
     return render(request,'registration/signup.html',{'form':form})      
