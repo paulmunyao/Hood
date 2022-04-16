@@ -3,7 +3,9 @@
 {%block content%}
 {%load static%}
 
-<a href="{% url 'login' %}">Login</a>
-<a href="{% url 'signup' %}">Signup</a>
+<div class="credentials">
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Signup</a>
+</div>
 
 {%endblock%}
