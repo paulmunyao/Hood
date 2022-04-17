@@ -28,5 +28,4 @@ def display(request):
 
 @login_required(login_url='/registration/login')
 def profile(request):
-    photo = Profile.objects.all()
-    return render(request, 'users/profile.html', {'photo': photo})    
+    return render(request, 'users/profile.html')    
