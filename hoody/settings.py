@@ -14,11 +14,12 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from decouple import config, Csv
 
 cloudinary.config(
-    cloud_name = "CLOUD_NAME",
-    api_key = "API_KEY",
-    api_secret = "API_SECRET"
+    cloud_name = config('CLOUD_NAME'),
+    api_key = config('CLOUDINARY_API_KEY'),
+    api_secret = config('CLOUDINARY_API_SECRET')
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,8 +36,6 @@ SECRET_KEY = 'django-insecure--15t7*gc52iqg-p2nrl!%gd1(%hfbh2x143cih)kc39z07m0ei
 DEBUG = True
 
 ALLOWED_HOSTS = []
-#ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
-
 
 # Application definition
 
