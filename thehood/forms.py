@@ -42,3 +42,19 @@ class UpdateUserForm(forms.ModelForm):
             'username': TextInput(attrs={'class': 'form-control'}),
             'email': EmailInput(attrs={'class': 'form-control'}),
         }
+
+
+class UpdateProfileForm(forms.ModelForm):
+    image = forms.ImageField(required=False)
+    bio = forms.CharField(required=False, widget=forms.Textarea)
+    location = forms.CharField(required=False)
+    description = forms.CharField(required=False, widget=forms.Textarea)
+
+    class Meta:
+        model = Profile
+        fields = ['image', 'bio', 'location', 'description']
+        widgets = {
+            'bio': forms.Textarea(attrs={'class': 'form-control'}),
+            'location': forms.TextInput(attrs={'class': 'form-control'}),
+            'description': forms.Textarea(attrs={'class': 'form-control'}),
+        }
