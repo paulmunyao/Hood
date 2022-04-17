@@ -1,25 +1,23 @@
-{ % extends "base.html"% }
-{%block title%}Profile Page {% endblock title %}
-{ % block content % }
-<div>
-    <h1>This is the profile page for {{user.username}}</h1>
-</div>
-<!-- <div>
-    <img src="" alt="">
-</div>
-{% if user_forms.errors %}
+{%extends 'base.html'%}
+{% block content %}
+    <div>
+        <h1>This is the profile page for {{user.username}}</h1>
+    </div>
+    <div>
+        <img src="" alt="">
+    </div>
+    {% if user_forms.errors %}
     {% for error in user_forms.errors %}
-        <div class="alert alert-danger">
-            {{ error }}
-        </div>
+    <div class="alert alert-danger">
+        {{ error }}
+    </div>
     {% endfor %}
-{% endif %}
+    {% endif %}
 
-<form method="post">
-    {%% csrf_token %}
-    {{ user_forms.as_p }}
-    <button class="sub" type="submit">Sign Up</button> -->
+    <form method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ profile_form.as_p }}
+        <button class="sub" type="submit">Sign Up</button>
 
-
-<!-- </form> -->
-{ % endblock %}
+    </form>
+{% endblock %}

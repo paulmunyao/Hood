@@ -45,11 +45,6 @@ class UpdateUserForm(forms.ModelForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
-    image = forms.ImageField(required=False)
-    bio = forms.CharField(required=False, widget=forms.Textarea)
-    location = forms.CharField(required=False)
-    description = forms.CharField(required=False, widget=forms.Textarea)
-
     class Meta:
         model = Profile
         fields = ['image', 'bio', 'location', 'description']
