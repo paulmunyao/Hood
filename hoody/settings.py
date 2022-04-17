@@ -18,8 +18,8 @@ from decouple import config, Csv
 
 cloudinary.config(
     cloud_name = config('CLOUD_NAME'),
-    api_key = config('CLOUDINARY_API_KEY'),
-    api_secret = config('CLOUDINARY_API_SECRET')
+    api_key = config('API_KEY'),
+    api_secret = config('API_SECRET')
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
