@@ -6,8 +6,6 @@ from cloudinary.models import CloudinaryField
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField('image')
-    #image  = models.ImageField(default='default.jpg', upload_to='profile_pics')
-    #image = CloudinaryField('image', null=True, blank=True,upload_to='profile_pics')
     bio = models.TextField(max_length=500, blank=True)
     location = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=500, blank=True)
