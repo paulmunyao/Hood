@@ -1,8 +1,7 @@
 {%extends 'base.html'%}
 {%block content%}
-<div class="log">
-    <h3 >Login</h3>
-    <title>{% block title %}My amazing site{% endblock %}</title>
+<div class="text-center">
+    <h3>Login</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
