@@ -18,8 +18,8 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2', )
         widgets = {
             'username': TextInput(attrs={'placeholder': 'username', 'class': 'control'}),
-            'password1': PasswordInput(attrs={'placeholder': 'password1', 'class': 'pass1'}),
-            'password2': PasswordInput(attrs={'placeholder': 'password2', 'class': 'pass2'}),
+            'password1': PasswordInput(attrs={'class':'pass1', 'type':'password', 'placeholder':'password'}),
+            'password2': PasswordInput(attrs={'class': 'pass2', 'type': 'password', 'placeholder': 'confirm password'}),
         }
 
 
