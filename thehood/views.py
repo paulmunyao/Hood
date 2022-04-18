@@ -44,6 +44,7 @@ def profile(request):
     return render(request, 'users/profile.html', {'profile_form': profile_form})
 
 
+@login_required(login_url='login')
 def neighbourhood(request):
     if request.method == 'POST':
         form = NeighbourhoodForm(request.POST)
@@ -55,6 +56,7 @@ def neighbourhood(request):
     return render(request, 'neighbourhood.html', {'form': form})
 
 
+@login_required(login_url='login')
 def business(request):
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES,
@@ -72,9 +74,7 @@ def search(request):
         search_term = request.GET.get("business")
         searched_business = Business.search_by_business(search_term)
         message = f"{search_term}"
-
         return render(request, 'display.html', {"message": message, "business": searched_business})
-
     else:
         message = "You haven't searched for any term"
         return render(request, 'display.html', {"message": message})
