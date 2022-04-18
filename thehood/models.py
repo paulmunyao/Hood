@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = CloudinaryField('image')
@@ -12,6 +14,7 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
 
 class Neighbourhood(models.Model):
     name = models.CharField(max_length=50)
@@ -39,7 +42,6 @@ class Neighbourhood(models.Model):
 
     def __str__(self):
         return f'{self.name}'
-
 class Business(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
@@ -47,8 +49,17 @@ class Business(models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
     email = models.EmailField()
 
+    def create_business(self):
+        self.save()
+
+    def delete_business(self):
+        self.delete()
+
+    def find_business(self):
+        return Business.objects.filter(id=self.id)
+
+    def update_business(self):
+        self.update()
 
     def __str__(self):
         return f'{self.name} Business'
-
-
