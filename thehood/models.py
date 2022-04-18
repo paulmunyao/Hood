@@ -14,7 +14,6 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 class Neighbourhood(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASC)
     name = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     occupants = models.IntegerField()
@@ -23,5 +22,14 @@ class Neighbourhood(models.Model):
     def __str__(self):
         return f'{self.location} Neighbourhood'
 
+class Business(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    email = models.EmailField()
 
+
+    def __str__(self):
+        return f'{self.location} Business'
 
