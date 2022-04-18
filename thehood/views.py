@@ -44,9 +44,21 @@ def profile(request):
     return render(request, 'users/profile.html', {'profile_form': profile_form})
 
 def neighbourhood(request):
-    form = NeighbourhoodForm()
+    if request.method == 'POST':
+        form = NeighbourhoodForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('neighbourhood')
+    else:
+        form = NeighbourhoodForm()
     return render(request, 'neighbourhood.html', {'form': form})
 
 def business(request):
-    form = BusinessForm()
+    if request.method == 'POST':
+        form = BusinessForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('business')
+    else:
+     form = BusinessForm()
     return render(request, 'business.html', {'form': form})    
