@@ -19,8 +19,22 @@ class Neighbourhood(models.Model):
     occupants = models.IntegerField()
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.name
+    def create_neighbourhood(self):
+        self.save()
+
+    def delete_neighbourhood(self):
+        self.delete()
+
+    def find_neighbourhood(self):
+        return Neighbourhood.objects.filter(id=self.id)
+
+    def update_neighbourhood(self):
+        self.update()
+
+    def update_occupants(self):
+        self.occupants += 1
+
+
 
 class Business(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
