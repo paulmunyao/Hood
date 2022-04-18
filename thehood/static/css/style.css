@@ -90,35 +90,70 @@ button:hover {
   margin-left: 10px;
 }
 
-.locat{
+ .locat {
   border-radius: 35px;
   height: 50px;
   width: 200px;
   margin-left: 10px;
 }
 
-.occup{
+.occup {
   border-radius: 35px;
   height: 50px;
   width: 200px;
   margin-left: 10px;
 }
 
-.adm{
+.adm {
   border-radius: 35px;
   height: 50px;
   width: 200px;
   margin-left: 10px;
 }
 
-.nam{
+.nam {
   border-radius: 35px;
   height: 50px;
   width: 200px;
   margin-left: 10px;
 }
 
-.hood{
+.hood {
+  font-family: "IBM Plex Sans Hebrew", sans-serif;
+  font-family: "Risque", cursive;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.names {
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.neigh {
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.mai {
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.submission {
+  border-radius: 35px;
+  height: 50px;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.biz {
   font-family: "IBM Plex Sans Hebrew", sans-serif;
   font-family: "Risque", cursive;
   text-align: center;

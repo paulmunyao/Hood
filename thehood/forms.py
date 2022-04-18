@@ -71,7 +71,7 @@ class BusinessForm(forms.ModelForm):
         model = Business
         fields = ['name', 'neighbourhood', 'email']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'neighbourhood': forms.Select(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'names'}),
+            'neighbourhood': forms.Select(attrs={'class': 'neigh'}),
+            'email': forms.EmailInput(attrs={'class': 'mai'}),
         }        
