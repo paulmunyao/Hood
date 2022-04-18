@@ -6,19 +6,4 @@
     <a href="{%url 'profile'%}">Profile</a>
     <a href="{%url 'logout' %}">Logout</a>
 </div>
-
-<div>
-    <form action="{% url 'search' %}" method="POST">
-        {% csrf_token %}
-        <input type="text" name="name">
-        <input type="submit" name="submit" value="Search">
-    </form>
-
-    {% for search  in searched_business%}
-
-    <p>{{search.business}}</p>
-
-    {% endfor %}
-</div>
-
 {% endblock %}
