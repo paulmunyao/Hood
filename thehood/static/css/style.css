@@ -5,7 +5,7 @@
   margin-top: 30px;
 }
 
-.log{
+.log {
   margin-top: 10%;
 }
 
@@ -20,17 +20,38 @@
   position: absolute;
   top: 20%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
+.sign {
+  text-align: center;
+  font-family: "IBM Plex Sans Hebrew", sans-serif;
+  font-family: "Risque", cursive;
+  background: #34495e;
+  margin-top: 100px;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-.sub{
+.sub {
   border-radius: 35px;
   height: 50px;
   width: 100px;
   margin-left: 5%;
 }
 
-button:hover{
+button:hover {
   background: #34495e;
+}
+
+.subm{
+  border-radius: 35px;
+  height: 50px;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 50px;
 }
