@@ -3,8 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import SignUpForm, Profile, UpdateUserForm, UpdateProfileForm
-from .models import Profile
+from .forms import SignUpForm, Profile, UpdateUserForm, UpdateProfileForm, NeighbourhoodForm, BusinessForm
+from .models import Profile, Neighbourhood, Business
 
 # Create your views here.
 
@@ -44,7 +44,9 @@ def profile(request):
     return render(request, 'users/profile.html', {'profile_form': profile_form})
 
 def neighbourhood(request):
-    return render(request, 'neighbourhood.html')
+    form = NeighbourhoodForm()
+    return render(request, 'neighbourhood.html', {'form': form})
 
 def business(request):
-    return render(request, 'business.html')    
+    form = BusinessForm()
+    return render(request, 'business.html', {'form': form})    
