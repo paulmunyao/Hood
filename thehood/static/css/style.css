@@ -5,7 +5,8 @@
   margin-top: 30px;
 }
 
-.log {
+.text-center {
+  text-align: center;
   font-family: "IBM Plex Sans Hebrew", sans-serif;
   font-family: "Risque", cursive;
 }
