@@ -7,4 +7,7 @@ urlpatterns = [
     path('signup', views.signup, name='signup'),
     path('display', views.display, name='display'),
     path('profile', views.profile, name='profile'),
+    path('neighbourhood', views.neighbourhood, name='neighbourhood'),
+    path('business', views.business, name='business'),
+    #path('admin/', admin.site.urls),
 ]
