@@ -50,9 +50,9 @@ class UpdateProfileForm(forms.ModelForm):
         model = Profile
         fields = ['image', 'bio', 'location', 'description']
         widgets = {
-            'bio': forms.Textarea(attrs={'class': 'form-control'}),
-            'location': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'bio': forms.Textarea(attrs={'class': 'biograpghy'}),
+            'location': forms.TextInput(attrs={'class': 'loca'}),
+            'description': forms.Textarea(attrs={'class': 'descrip'}),
         }
 
 class NeighbourhoodForm(forms.ModelForm):
