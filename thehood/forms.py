@@ -1,3 +1,4 @@
+from logging import PlaceHolder
 from django import forms
 from django.contrib.auth.models import User
 from .models import Profile
@@ -9,16 +10,16 @@ class SignUpForm(UserCreationForm):
     email = forms.EmailField(
         max_length=254,
         help_text='Required. Inform a valid email address.',
-        widget=EmailInput(attrs={'class': 'form-control'}),
+        widget=EmailInput(attrs={'placeholder': 'email', 'class': 'mail'})
     )
 
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2', )
         widgets = {
-            'username': TextInput(attrs={'class': 'form-control'}),
-            'password1': PasswordInput(attrs={'class': 'form-control'}),
-            'password2': PasswordInput(attrs={'class': 'form-control'}),
+            'username': TextInput(attrs={'placeholder': 'username', 'class': 'control'}),
+            'password1': PasswordInput(attrs={'placeholder': 'password1', 'class': 'pass1'}),
+            'password2': PasswordInput(attrs={'placeholder': 'password2', 'class': 'pass2'}),
         }
 
 
