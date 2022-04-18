@@ -42,3 +42,9 @@ def profile(request):
     else:
         profile_form = UpdateProfileForm(instance=request.user.profile)
     return render(request, 'users/profile.html', {'profile_form': profile_form})
+
+def neighbourhood(request):
+    return render(request, 'neighbourhood.html')
+
+def business(request):
+    return render(request, 'business.html')    
