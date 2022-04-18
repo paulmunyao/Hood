@@ -4,7 +4,10 @@
     <h3>Sign Up</h3>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div>{{ form.username}}</div>
+        <div>{{ form.email}}</div>
+        <div>{{ form.password1}}</div>
+        <div>{{ form.password2}}</div>
         <button class="sub" type="submit">Sign Up</button>
     </form>
 </div>

@@ -8,6 +8,7 @@
 
 <form method="post" enctype='multipart/form-data'>
     {% csrf_token %}
+    <!-- {{profile_form.description}} -->
     {{ profile_form.as_p }}
     <button class="sub" type="submit">Update Profile</button>
 
