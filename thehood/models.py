@@ -20,7 +20,7 @@ class Neighbourhood(models.Model):
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.location} Neighbourhood'
+        return self.name
 
 class Business(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -31,5 +31,6 @@ class Business(models.Model):
 
 
     def __str__(self):
-        return f'{self.location} Business'
+        return f'{self.name} Business'
+
 
