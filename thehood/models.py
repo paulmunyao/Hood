@@ -34,7 +34,11 @@ class Neighbourhood(models.Model):
     def update_occupants(self):
         self.occupants += 1
 
+    def delete_occupants(self):
+        self.occupants -= 1
 
+    def __str__(self):
+        return f'{self.name}'
 
 class Business(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
