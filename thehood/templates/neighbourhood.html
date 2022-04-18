@@ -1,8 +1,11 @@
 {%extends 'base.html'%}
 {% block content %}
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="sub" type="submit">Add Neighbourhood</button>
-</form>
+<div class="hood">
+    <h1>Neighbourhood</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="neb" type="submit">Add Neighbourhood</button>
+    </form>
+</div>
 {% endblock %}

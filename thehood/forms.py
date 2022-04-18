@@ -60,10 +60,10 @@ class NeighbourhoodForm(forms.ModelForm):
         model = Neighbourhood
         fields = ['name', 'location', 'occupants', 'admin']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'location': forms.TextInput(attrs={'class': 'form-control'}),
-            'occupants': forms.NumberInput(attrs={'class': 'form-control'}),
-            'admin': forms.Select(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'nam'}),
+            'location': forms.TextInput(attrs={'class': 'locat'}),
+            'occupants': forms.NumberInput(attrs={'class': 'occup'}),
+            'admin': forms.Select(attrs={'class': 'adm'}),
         }
 
 class BusinessForm(forms.ModelForm):

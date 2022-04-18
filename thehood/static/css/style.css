@@ -60,6 +60,7 @@ button:hover {
   font-family: "IBM Plex Sans Hebrew", sans-serif;
   font-family: "Risque", cursive;
   text-align: center;
+  margin-top: 50px;
 }
 
 .jina {
@@ -74,12 +75,52 @@ button:hover {
   height: 50px;
   width: 150px;
   margin-left: 10px;
-  margin-bottom: 50px;
 }
 
-.rounded-circle{
+.rounded-circle {
   height: 300px;
   width: 300px;
   margin-left: -30px;
 }
 
+.neb {
+  border-radius: 35px;
+  height: 50px;
+  width: 20 0px;
+  margin-left: 10px;
+}
+
+.locat{
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.occup{
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.adm{
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.nam{
+  border-radius: 35px;
+  height: 50px;
+  width: 200px;
+  margin-left: 10px;
+}
+
+.hood{
+  font-family: "IBM Plex Sans Hebrew", sans-serif;
+  font-family: "Risque", cursive;
+  text-align: center;
+  margin-top: 50px;
+}
