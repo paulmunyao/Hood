@@ -1,7 +1,24 @@
 {% extends "base.html" %}
 {%block content %}
-<a href="{%url 'business'%}">Business</a>
-<a href="{%url 'neighbourhood'%}">Neighbourhood</a>
-<a href="{%url 'profile'%}">Profile</a>
-<a href="{%url 'logout' %}">Logout</a>
+<div>
+    <a href="{%url 'business'%}">Business</a>
+    <a href="{%url 'neighbourhood'%}">Neighbourhood</a>
+    <a href="{%url 'profile'%}">Profile</a>
+    <a href="{%url 'logout' %}">Logout</a>
+</div>
+
+<div>
+    <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name">
+        <input type="submit" name="submit" value="Search">
+    </form>
+
+    {% for result in results %}
+
+    <p>{{result.name}}</p>
+
+    {% endfor %}
+</div>
+
 {% endblock %}

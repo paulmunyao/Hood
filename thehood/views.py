@@ -57,7 +57,8 @@ def neighbourhood(request):
 
 def business(request):
     if request.method == 'POST':
-        form = BusinessForm(request.POST, request.FILES, instance=request.user.business)
+        form = BusinessForm(request.POST, request.FILES,
+                            instance=request.user.business)
         if form.is_valid():
             form.save()
             return redirect('business')
