@@ -59,7 +59,7 @@ class UpdateProfileForm(forms.ModelForm):
 class NeighbourhoodForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
-        fields = ['name', 'location', 'occupants', 'admin']
+        fields = ['name','image', 'location', 'occupants', 'admin']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'nam'}),
             'location': forms.TextInput(attrs={'class': 'locat'}),
@@ -71,7 +71,7 @@ class NeighbourhoodForm(forms.ModelForm):
 class BusinessForm(forms.ModelForm):
     class Meta:
         model = Business
-        fields = ['name', 'neighbourhood', 'email']
+        fields = ['name','image', 'neighbourhood', 'email']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'names'}),
             'neighbourhood': forms.Select(attrs={'class': 'neigh'}),

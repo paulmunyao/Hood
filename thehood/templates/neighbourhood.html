@@ -8,9 +8,26 @@
         <button class="neb" type="submit">Add Neighbourhood</button>
     </form>
     <div class="row">
-        <div class="card mt-5">
-            <div class="card-body">
-                <div class="col">
+        <div class="col">
+            <div class="">
+                <div class="container-fluid d-flex flex-row flex-wrap my-3">
+                   
+                        {%for hood in neighbourhoods%}
+                        <div class="col-lg-4">
+                            <img class="pic" src="{{hood.image.url}}" alt="">
+                            <p>{{hood.name}}</p>
+                            <p>{{hood.occupants}}</p>
+                            <p>{{hood.admin}}</p>
+                        </div>
+                        {%endfor%}
+                    
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col">
+            <div class="card mt-5">
+                <div class="card-body">
                     <ul>
                         {%for hood in neighbourhoods%}
                         <li>
@@ -22,31 +39,21 @@
                     </ul>
                 </div>
             </div>
+        </div> -->
+            <!-- <div class="col">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <ul>
+                        {%for hood in neighbourhoods%}
+                        <li>
+                            <p>{{hood.name}}</p>
+                            <p>{{hood.occupants}}</p>
+                            <p>{{hood.admin}}</p>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                </div>
+            </div>
+        </div> -->
         </div>
-        <div class="col">
-            <ul>
-                {%for hood in neighbourhoods%}
-                <li>
-                    <p>{{hood.name}}</p>
-                    <p>{{hood.location}}</p>
-                    <p>{{hood.occupants}}</p>
-                    <p>{{hood.admin}}</p>
-                </li>
-                {%endfor%}
-            </ul>
-        </div>
-        <div class="col">
-            <ul>
-                {%for hood in neighbourhoods%}
-                <li>
-                    <p>{{hood.name}}</p>
-                    <p>{{hood.location}}</p>
-                    <p>{{hood.occupants}}</p>
-                    <p>{{hood.admin}}</p>
-                </li>
-                {%endfor%}
-            </ul>
-        </div>
-    </div>
-</div>
-{% endblock %}
+        {% endblock %}

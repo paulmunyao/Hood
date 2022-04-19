@@ -18,6 +18,7 @@ class Profile(models.Model):
 
 class Neighbourhood(models.Model):
     name = models.CharField(max_length=50)
+    image = CloudinaryField('image', blank=True)
     location = models.CharField(max_length=50)
     occupants = models.IntegerField()
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -44,6 +45,7 @@ class Neighbourhood(models.Model):
         return f'{self.name}'
 class Business(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = CloudinaryField('image',blank=True)
     name = models.CharField(max_length=50)
     id = models.AutoField(primary_key=True)
     neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)

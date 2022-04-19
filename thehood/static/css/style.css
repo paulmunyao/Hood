@@ -177,6 +177,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
+  overflow-x: hidden;
 }
 
 .background-one {
@@ -411,4 +412,10 @@ a {
 
 .pes li{
   list-style: none;
+}
+
+.pic{
+  width: 90%;
+  height: 60%;
+  object-fit: cover;
 }
