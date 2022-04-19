@@ -215,8 +215,6 @@ a {
 .link-one:hover {
   color: #111;
   transition: color 1s cubic-bezier(0.33, 1, 0.68, 1);
-
-  /* Thanks Chris Coyier, you got my back always. https://css-tricks.com/different-transitions-for-hover-on-hover-off/ */
 }
 
 .link-one::before {
@@ -228,7 +226,6 @@ a {
   top: 0;
   right: 0;
   background-color: #53d9d1;
-
   clip-path: circle(0% at 50% calc(50%));
   transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -257,65 +254,11 @@ a {
     60% 100%,
     40% 100%
   );
-
-  /*
-  Didn't look consistently awesome enough
-  across different viewing widths.
-  clip-path: polygon(
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%,
-    50% 50%
-  );
-  */
   transition: clip-path 1s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 .link-one:hover::after {
-  /*
-  clip-path: polygon(
-    20% 45%,
-    10% 40%,
-    30% 30%,
-    40% 35%,
-    60% 35%,
-    70% 30%,
-    90% 40%,
-    80% 45%,
-    60% 35%,
-    40% 35%,
-    20% 45%,
-    20% 55%,
-    10% 60%,
-    30% 70%,
-    40% 65%,
-    60% 65%,
-    70% 70%,
-    90% 60%,
-    80% 55%,
-    60% 65%,
-    40% 65%,
-    20% 55%
-  );
-  */
+  
   clip-path: polygon(
     40% 10%,
     60% 10%,
