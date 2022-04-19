@@ -46,6 +46,7 @@ def profile(request):
 
 @login_required(login_url='login')
 def neighbourhood(request):
+    neigbourhoods = Neighbourhood.objects.all()
     if request.method == 'POST':
         form = NeighbourhoodForm(request.POST)
         if form.is_valid():
@@ -53,11 +54,12 @@ def neighbourhood(request):
             return redirect('neighbourhood')
     else:
         form = NeighbourhoodForm()
-    return render(request, 'neighbourhood.html', {'form': form})
+    return render(request, 'neighbourhood.html', {'form': form, 'neighbourhoods': neigbourhoods})
 
 
 @login_required(login_url='login')
 def business(request):
+    business = Business.objects.all()
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES,
                             instance=request.user.business)
