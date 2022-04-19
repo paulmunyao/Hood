@@ -8,15 +8,20 @@
         <button class="submission" type="submit">Add Business</button>
     </form>
 </div>
-
-<ul>
-    {%for business in business%}
-    <li>
-        <p>{{business.name}}</p>
-        <p>{{business.id}}</p>
-        <p>{{business.neighbourhood}}</p>
-        <p>{{business.email}}</p>
-    </li>
-    {%endfor%}
-</ul>
+<div class="pes">
+    <div class="card">
+        <div class="card-body">
+            <ul>
+                {%for business in business%}
+                <li>
+                    <p>{{business.name}}</p>
+                    <p>{{business.id}}</p>
+                    <p>{{business.neighbourhood}}</p>
+                    <p>{{business.email}}</p>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}
