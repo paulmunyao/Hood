@@ -66,9 +66,9 @@ def business(request):
             name = form.cleaned_data['name']
             neighbourhood = form.cleaned_data['neighbourhood']
             email = form.cleaned_data['email']
-            created = Business(name=name, neighbourhood=neighbourhood, email=email,image=image, user=request.user)
+            created = Business(name=name, neighbourhood=neighbourhood, email=email, user=request.user)
             created.save()
-            return redirect('display')
+            return redirect('business')
     else:
         form = BusinessForm()
     return render(request, 'business.html', {'form': form, 'business': business})

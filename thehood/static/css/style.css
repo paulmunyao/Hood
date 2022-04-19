@@ -419,3 +419,10 @@ a {
   height: 60%;
   object-fit: cover;
 }
+
+#lg{
+  font-family: "IBM Plex Sans Hebrew", sans-serif;
+  font-family: "Risque", cursive;
+  text-align: center;
+  
+}

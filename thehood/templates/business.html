@@ -8,19 +8,19 @@
         <button class="submission" type="submit">Add Business</button>
     </form>
 </div>
-<div class="pes">
-    <div class="card">
-        <div class="card-body">
-            <ul>
+<div class="row">
+    <div class="col">
+        <div class="">
+            <div class="container-fluid d-flex flex-row flex-wrap my-3">
                 {%for business in business%}
-                <li>
+                <div class="col-lg-4" id="lg">
                     <p>{{business.name}}</p>
                     <p>{{business.id}}</p>
                     <p>{{business.neighbourhood}}</p>
                     <p>{{business.email}}</p>
-                </li>
+                </div>
                 {%endfor%}
-            </ul>
+            </div>
         </div>
     </div>
 </div>
