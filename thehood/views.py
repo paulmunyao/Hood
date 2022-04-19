@@ -68,7 +68,7 @@ def business(request):
             return redirect('business')
     else:
         form = BusinessForm()
-    return render(request, 'business.html', {'form': form})
+    return render(request, 'business.html', {'form': form, 'business': business})
 
 
 def search(request):
