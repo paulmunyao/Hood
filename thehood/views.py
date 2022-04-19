@@ -63,7 +63,6 @@ def business(request):
     if request.method == 'POST':
         form = BusinessForm(request.POST, request.FILES)
         if form.is_valid():
-            image = form.cleaned_data['image']
             name = form.cleaned_data['name']
             neighbourhood = form.cleaned_data['neighbourhood']
             email = form.cleaned_data['email']
