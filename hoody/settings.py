@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
+import django_heroku
+import dj_database_url
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
@@ -17,9 +19,9 @@ import cloudinary.api
 from decouple import config, Csv
 
 cloudinary.config(
-    cloud_name = config('CLOUD_NAME'),
-    api_key = config('API_KEY'),
-    api_secret = config('API_SECRET')
+    cloud_name='dgt1bdrye',
+    api_key='621519364968887',
+    api_secret='1xRraoghj5SCJWYfVbvC-Xf7z1Y'
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -67,7 +69,7 @@ ROOT_URLCONF = 'hoody.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'hoody/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'hoody/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,16 +88,32 @@ WSGI_APPLICATION = 'hoody.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hood',
-        'USER': 'moringa',
-        'PASSWORD': 'Access',
-        'HOST': 'localhost',
-        'PORT': '',
+MODE = config("MODE", default="dev")
+SECRET_KEY = 'django-insecure--15t7*gc52iqg-p2nrl!%gd1(%hfbh2x143cih)kc39z07m0ei'
+DEBUG = config('DEBUG', default=False, cast=bool)
+# development
+if config('MODE') == "dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': '',
+        }
+
     }
-}
+# production
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
@@ -134,10 +152,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR,  'static')
-
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Default primary key field type
@@ -145,4 +163,4 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'display'
-LOGOUT_REDIRECT_URL = 'signup'
+LOGOUT_REDIRECT_URL = 'indexz'
