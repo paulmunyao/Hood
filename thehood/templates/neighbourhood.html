@@ -7,7 +7,8 @@
         {{ form.as_p }}
         <button class="neb" type="submit">Add Neighbourhood</button>
     </form>
-    <ul>{%for hood in neighbourhoods%}
+    <ul>
+        {%for hood in neighbourhoods%}
         <li>
             <p>{{hood.name}}</p>
             <p>{{hood.location}}</p>
@@ -16,6 +17,5 @@
         </li>
         {%endfor%}
     </ul>
-
 </div>
 {% endblock %}

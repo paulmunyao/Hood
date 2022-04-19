@@ -61,22 +61,15 @@ def neighbourhood(request):
 def business(request):
     business = Business.objects.all()
     if request.method == 'POST':
-        form = BusinessForm(request.POST, request.FILES,
-                            instance=request.user.business)
+        form = BusinessForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('business')
+            name = form.cleaned_data['name']
+            neighbourhood = form.cleaned_data['neighbourhood']
+            email = form.cleaned_data['email']
+            created = Business(name=name, neighbourhood=neighbourhood, email=email, user=request.user)
+            created.save()
+            return redirect('display')
     else:
         form = BusinessForm()
     return render(request, 'business.html', {'form': form, 'business': business})
 
-
-def search(request):
-    if 'business' in request.GET and request.GET["business"]:
-        search_term = request.GET.get("business")
-        searched_business = Business.search_by_business(search_term)
-        message = f"{search_term}"
-        return render(request, 'display.html', {"message": message, "business": searched_business})
-    else:
-        message = "You haven't searched for any term"
-        return render(request, 'display.html', {"message": message})

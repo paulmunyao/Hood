@@ -18,7 +18,7 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2', )
         widgets = {
             'username': TextInput(attrs={'placeholder': 'username', 'class': 'control'}),
-            'password1': PasswordInput(attrs={'class':'pass1', 'type':'password', 'placeholder':'password'}),
+            'password1': PasswordInput(attrs={'class': 'pass1', 'type': 'password', 'placeholder': 'password'}),
             'password2': PasswordInput(attrs={'class': 'pass2', 'type': 'password', 'placeholder': 'confirm password'}),
         }
 
@@ -55,6 +55,7 @@ class UpdateProfileForm(forms.ModelForm):
             'description': forms.Textarea(attrs={'class': 'descrip'}),
         }
 
+
 class NeighbourhoodForm(forms.ModelForm):
     class Meta:
         model = Neighbourhood
@@ -66,6 +67,7 @@ class NeighbourhoodForm(forms.ModelForm):
             'admin': forms.Select(attrs={'class': 'adm'}),
         }
 
+
 class BusinessForm(forms.ModelForm):
     class Meta:
         model = Business
@@ -74,4 +76,4 @@ class BusinessForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'class': 'names'}),
             'neighbourhood': forms.Select(attrs={'class': 'neigh'}),
             'email': forms.EmailInput(attrs={'class': 'mai'}),
-        }        
+        }
