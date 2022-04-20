@@ -46,6 +46,10 @@ class BusinessTestCase(TestCase):
     def test_create_method(self):
         neighbourhood = self.neighbourhood.create_neighbourhood()
         self.assertTrue(neighbourhood)
+
+    def test_delete_method(self):
+        neighbourhood = self.neighbourhood.delete_neighbourhood()
+        self.assertTrue(neighbourhood)    
        
 
 
