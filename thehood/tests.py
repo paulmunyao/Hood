@@ -71,6 +71,10 @@ class BusinessTestCase(TestCase):
         business = self.business.create_business()
         self.assertTrue(business)
 
+    def test_delete_method(self):
+        business = self.business.delete_business()
+        self.assertTrue(business)
+
 
 
 
