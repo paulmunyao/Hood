@@ -30,19 +30,6 @@ class NeighbourhoodTest(TestCase):
         self.assertEqual(self.neighbourhood.occupants, 1)
         self.assertEqual(self.neighbourhood.admin, self.user)
 
-
-class BusinessTestCase(TestCase):
-    def setUp(self):
-        self.user = User.objects.create(username='test')
-        self.business = Business.objects.create(
-            name='test', id='1', email='test')
-
-    def test_business_content(self):
-        self.assertEqual(f'{self.business.name}', 'test')
-        self.assertEqual(f'{self.business.id}', '1')
-        self.assertEqual(f'{self.business.neighbourhood}', 'test')
-        self.assertEqual(f'{self.business.email}', 'test')
-  
     def test_create_method(self):
         neighbourhood = self.neighbourhood.create_neighbourhood()
         self.assertTrue(neighbourhood)
@@ -66,6 +53,23 @@ class BusinessTestCase(TestCase):
     def test_delete_occupants_method(self):
         neighbourhood = self.neighbourhood.delete_occupants()
         self.assertTrue(neighbourhood)
+
+
+class BusinessTestCase(TestCase):
+    def setUp(self):
+        self.user = User.objects.create(username='test')
+        self.business = Business.objects.create(
+            name='test', id='1', email='test')
+
+    def test_business_content(self):
+        self.assertEqual(f'{self.business.name}', 'test')
+        self.assertEqual(f'{self.business.id}', '1')
+        self.assertEqual(f'{self.business.neighbourhood}', 'test')
+        self.assertEqual(f'{self.business.email}', 'test')
+  
+    def test_create_method(self):
+        business = self.business.create_business()
+        self.assertTrue(business)
 
 
 
