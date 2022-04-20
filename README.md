@@ -24,9 +24,9 @@ python3 manage.py runserver
 ```
 ## Running the tests
 
-On VSCode terminal run the following command
+On VSCode terminal run the following command since i'm using the pytest method
 ```
-python3 test awardpaul
+pytest
 ```
 gram is the name of the application
 ### Break down end to end tests
