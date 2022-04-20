@@ -34,9 +34,9 @@ gram is the name of the application
 Testing if a user can save an image
 
 ```
- def test_save_method(self):
-        image = Image.objects.get(id=1)
-        self.assertTrue(image.save_image())
+ def test_create_method(self):
+        business = self.business.create_business()
+        self.assertTrue(business)
 ``` 
 ## Deployment
 
