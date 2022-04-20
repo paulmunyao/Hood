@@ -63,6 +63,10 @@ class BusinessTestCase(TestCase):
         neighbourhood = self.neighbourhood.update_occupants()
         self.assertTrue(neighbourhood)
 
+    def test_delete_occupants_method(self):
+        neighbourhood = self.neighbourhood.delete_occupants()
+        self.assertTrue(neighbourhood)
+
 
 
 
