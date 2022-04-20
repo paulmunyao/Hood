@@ -59,6 +59,10 @@ class BusinessTestCase(TestCase):
         neighbourhood = self.neighbourhood.update_neighbourhood()
         self.assertTrue(neighbourhood)
 
+    def test_update_occupants_method(self):
+        neighbourhood = self.neighbourhood.update_occupants()
+        self.assertTrue(neighbourhood)
+
 
 
 
