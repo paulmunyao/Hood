@@ -14,6 +14,16 @@ class ProfileTest(TestCase):
         self.assertEqual(self.profile.location, 'test location')
         self.assertEqual(self.profile.description, 'test description')
 
+class NeighbourhoodTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(username='test')
+        self.neighbourhood = Neighbourhood.objects.create(name='test name', location='test location', occupants=1, admin=self.user)
+
+    def test_neighbourhood_content(self):
+        self.assertEqual(f'{self.neighbourhood.name}', str(self.neighbourhood))
+        self.assertEqual(self.neighbourhood.location, 'test location')
+        self.assertEqual(self.neighbourhood.occupants, 1)
+        self.assertEqual(self.neighbourhood.admin, self.user)
             
 
 class BusinessTestCase(TestCase):
