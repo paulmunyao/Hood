@@ -53,7 +53,13 @@ class BusinessTestCase(TestCase):
        
     def test_find_method(self):
         neighbourhood = self.neighbourhood.find_neighbourhood()
-        self.assertTrue(neighbourhood) 
+        self.assertTrue(neighbourhood)  
+
+    def test_update_method(self):
+        neighbourhood = self.neighbourhood.update_neighbourhood()
+        self.assertTrue(neighbourhood)
+
+
 
 
     
