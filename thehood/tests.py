@@ -43,3 +43,12 @@ class BusinessTestCase(TestCase):
         self.assertEqual(f'{self.business.neighbourhood}', 'test')
         self.assertEqual(f'{self.business.email}', 'test')
   
+    def test_create_method(self):
+        neighbourhood = self.neighbourhood.create_neighbourhood()
+        self.assertTrue(neighbourhood)
+       
+
+
+
+    
+            

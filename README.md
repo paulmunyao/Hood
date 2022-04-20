@@ -31,13 +31,13 @@ python3 test awardpaul
 gram is the name of the application
 ### Break down end to end tests
 
-<!-- Testing if a user can save an image
+Testing if a user can save an image
 
 ```
  def test_save_method(self):
         image = Image.objects.get(id=1)
         self.assertTrue(image.save_image())
-``` -->
+``` 
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
