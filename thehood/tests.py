@@ -79,6 +79,10 @@ class BusinessTestCase(TestCase):
         business = self.business.find_business()
         self.assertTrue(business)
 
+    def test_update_method(self):
+        business = self.business.update_business()
+        self.assertTrue(business)
+
 
 
 
